@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "header": "How many workouts am I suppose to do each day?",
+      "body": "Complete all the workouts listed for each day. Rest between workouts 5 minutes."
+    },
+    {
+      "id": 2,
+      "header": "My muscles sore the next day, do I need to exercise?",
+      "body": "No. Give yourself an extra day off to complete recover before starting new workout. But if for example your chest sore but today you training legs then it can be done without any additional rest."
+    },
+    {
+      "id": 3,
+      "header": "Its too hard! What can I do about it?",
+      "body": "Well, it supposed to be hard! Just try your best to keep up with me try maintaining a good form, if you feel exhausted, stop for 10-15 seconds, rest a little bit and go back to work."
+    }
+  ]
