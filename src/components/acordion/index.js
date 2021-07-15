@@ -33,11 +33,7 @@ Accordion.Header = function AccordionHeader({ children, ...restProps }) {
     <Header onClick={() => setToggleShow((toggleShow) => !toggleShow)} {...restProps}>
       {children}
       {/* <pre>{JSON.stringify(toggleShow, null, 2)}</pre> */}
-      {toggleShow ? (
-          <img src="/images/icons/close-slim.png" alt="Close"/>
-      ) : (
-        <img src="/images/icons/add.png" alt="Open"/>
-      )}
+          <img className={toggleShow ? "open" : "closed"} src="/images/icons/close-slim.png"/>
     </Header>
   );
 };

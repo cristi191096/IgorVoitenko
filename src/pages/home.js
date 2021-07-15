@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Accordion} from "../components";
+import { Header, Accordion, Card, Player} from "../components";
 import * as ROUTES from "../constants/routes";
 import faqsData from "../fixtures/faq.json"
 
@@ -43,9 +43,10 @@ export default function Home() {
         </Header.Feature>
       </Header>
       <Accordion>
+        <Accordion.Title>Let's get the FAQ going!</Accordion.Title>
       <Accordion.Frame>
         {faqsData.map((item) => (
-          <Accordion.Item key={item.id}>
+          <Accordion.Item color={"white"} key={item.id}>
             <Accordion.Header>{item.header}</Accordion.Header>
             <Accordion.Body>{item.body}</Accordion.Body>
           </Accordion.Item>

@@ -1,0 +1,1 @@
+export {theme as DefaultTheme} from './theme1'

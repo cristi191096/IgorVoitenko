@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
   display: flex;
   border-bottom: 8px solid #222;
+  background: ${props => props.theme.accordion.BGColor};
 `;
 
 export const Frame = styled.div`
@@ -22,7 +23,7 @@ export const Title = styled.h1`
   line-height: 1.1;
   margin-top: 0;
   margin-bottom: 8px;
-  color: white;
+  color: ${props => props.theme.accordion.textColor};
   text-align: center;
 
   @media (max-width: 600px) {
@@ -31,7 +32,7 @@ export const Title = styled.h1`
 `;
 
 export const Item = styled.div`
-  color: white;
+  color: ${props => props.theme.accordion.textColor};
   margin: auto;
   margin-bottom: 10px;
   max-width: 815px;
@@ -52,15 +53,37 @@ export const Header = styled.div`
   margin-bottom: 1px;
   font-size: 26px;
   font-weight: normal;
-  background: #303030;
+  background: ${props => props.theme.accordion.itemBGColor};
   padding: 0.8em 1.2em 0.8em 1.2em;
   user-select: none;
   align-items: center;
 
+  border-style: ${props => props.theme.accordion.borderStyle};
+  border-color: ${props => props.theme.accordion.borderColor};
+  border-width: ${props => props.theme.accordion.borderWidth};
+  border-radius: ${props => props.theme.accordion.borderRadius};
+
   img {
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(0);
     width: 24px;
     user-select: none;
+
+    &.closed {
+      transform: rotate(-45deg);
+
+      
+    transition: transform;
+    transition-duration: ${props => props.theme.accordion.transitionDuration};
+    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transitionCubicBezier});
+    }
+
+    &.open {
+      transform: rotate(-90deg);
+
+    transition: transform;
+    transition-duration: ${props => props.theme.accordion.transitionDuration};
+    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transitionCubicBezier});
+    }
 
     @media (max-width: 600px) {
       width: 16px;
@@ -76,24 +99,36 @@ export const Body = styled.div`
   font-size: 26px;
   font-weight: normal;
   line-height: normal;
-  background: #303030;
+  background: ${props => props.theme.accordion.itemBGColor};
   white-space: pre-wrap;
   user-select: none;
   overflow: hidden;
 
-  &.closed {
-    transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+  border-style: ${props => props.theme.accordion.borderStyle};
+  border-color: ${props => props.theme.accordion.borderColor};
+  border-width: ${props => props.theme.accordion.borderWidth};
+  border-radius: ${props => props.theme.accordion.borderRadius};
+
+  &.closed {  
     max-height: 0;
+    border-style: none;
+    
     overflow: hidden;
+    transition: max-height;
+    transition-duration: ${props => props.theme.accordion.transitionDuration};
+    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transitionCubicBezier});
   }
+
   &.open {
-    max-height: 1200px;
-    transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+    max-height: ${props => props.theme.accordion.maxHeight};
+    transition: max-height;
+    transition-duration: ${props => props.theme.accordion.transitionDuration};
+    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transitionCubicBezier});
   }
 
   span {
     display: block;
-    padding: 0.8em 2.2em 0.8em 1.2em;
+    padding: 0em 2.2em 0.8em 1.2em;
   }
 
   @media (max-width: 600px) {
