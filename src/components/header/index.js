@@ -9,6 +9,7 @@ import {
   Text,
   FeatureCallOut,
   Link,
+  LinkA,
   Picture,
   Profile,
   Dropdown,
@@ -18,10 +19,17 @@ import {
   PlayButton,
   Group,
 } from "./styles/header";
+import {ThemeProvider} from "styled-components"
+import { DefaultTheme } from "../../themes";
 
-export default function Header({ bg = true, children, ...restProps }) {
-  return bg ? <Background {...restProps}>{children}</Background> : children;
-}
+export default function Header({theme=DefaultTheme, bg = true, children, ...restProps }) {
+  return(
+    <ThemeProvider theme={theme}>
+    { bg ? <Background {...restProps}>{children}</Background> : children}
+     </ThemeProvider>
+     );
+
+};
 
 Header.Feature = function HeaderFeature({ children, ...restProps }) {
   return <Feature {...restProps}>{children}</Feature>;
@@ -79,8 +87,8 @@ Header.Text = function HeaderText({ children, ...restProps }) {
   };
   
 
-Header.TextLink = function HeaderTextLink({ children, ...restProps }) {
-  return <Link {...restProps}>{children}</Link>;
+Header.TextLink = function HeaderTextLink({ goToSection="", children, ...restProps }) {
+  return goToSection === "" ? <Link {...restProps}>{children}</Link> : <LinkA href={`#${goToSection}`} {...restProps}>{children}</LinkA>;
 };
 
 Header.Logo = function HeaderLogo({ to, ...restProps }) {

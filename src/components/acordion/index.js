@@ -1,12 +1,16 @@
 import React, { createContext, useState, useContext } from "react";
 import { Container, Inner, Title, Header, Item, Body, Frame } from "./styles/accordion";
+import {ThemeProvider} from "styled-components"
+import { DefaultTheme } from "../../themes";
 
 const ToggleContext = createContext();
-export default function Accordion({ children, ...restProps }) {
+export default function Accordion({theme=DefaultTheme, children, ...restProps }) {
   return (
+    <ThemeProvider theme={theme}>
     <Container {...restProps}>
       <Inner>{children}</Inner>
     </Container>
+    </ThemeProvider>
   );
 }
 

@@ -23,7 +23,7 @@ export const Title = styled.h1`
   line-height: 1.1;
   margin-top: 0;
   margin-bottom: 8px;
-  color: ${props => props.theme.accordion.textColor};
+  color: ${props => props.theme.accordion.title.color === "" ? props.theme.accordion.textColor : props.theme.accordion.title.color};
   text-align: center;
 
   @media (max-width: 600px) {
@@ -53,15 +53,15 @@ export const Header = styled.div`
   margin-bottom: 1px;
   font-size: 26px;
   font-weight: normal;
-  background: ${props => props.theme.accordion.itemBGColor};
+  background: ${props => props.theme.accordion.item.BGColor};
   padding: 0.8em 1.2em 0.8em 1.2em;
   user-select: none;
   align-items: center;
 
-  border-style: ${props => props.theme.accordion.borderStyle};
-  border-color: ${props => props.theme.accordion.borderColor};
-  border-width: ${props => props.theme.accordion.borderWidth};
-  border-radius: ${props => props.theme.accordion.borderRadius};
+  border-style: ${props => props.theme.accordion.border.style};
+  border-color: ${props => props.theme.accordion.border.color};
+  border-width: ${props => props.theme.accordion.border.width};
+  border-radius: ${props => props.theme.accordion.border.radius};
 
   img {
     filter: brightness(0) invert(0);
@@ -73,16 +73,16 @@ export const Header = styled.div`
 
       
     transition: transform;
-    transition-duration: ${props => props.theme.accordion.transitionDuration};
-    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transitionCubicBezier});
+    transition-duration: ${props => props.theme.accordion.transition.duration};
+    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transition.cubicBezier});
     }
 
     &.open {
       transform: rotate(-90deg);
 
     transition: transform;
-    transition-duration: ${props => props.theme.accordion.transitionDuration};
-    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transitionCubicBezier});
+    transition-duration: ${props => props.theme.accordion.transition.duration};
+    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transition.cubicBezier});
     }
 
     @media (max-width: 600px) {
@@ -99,15 +99,15 @@ export const Body = styled.div`
   font-size: 26px;
   font-weight: normal;
   line-height: normal;
-  background: ${props => props.theme.accordion.itemBGColor};
+  background: ${props => props.theme.accordion.item.BGColor};
   white-space: pre-wrap;
   user-select: none;
   overflow: hidden;
 
-  border-style: ${props => props.theme.accordion.borderStyle};
-  border-color: ${props => props.theme.accordion.borderColor};
-  border-width: ${props => props.theme.accordion.borderWidth};
-  border-radius: ${props => props.theme.accordion.borderRadius};
+  border-style: ${props => props.theme.accordion.border.style};
+  border-color: ${props => props.theme.accordion.border.color};
+  border-width: ${props => props.theme.accordion.border.width};
+  border-radius: ${props => props.theme.accordion.border.radius};
 
   &.closed {  
     max-height: 0;
@@ -115,15 +115,15 @@ export const Body = styled.div`
     
     overflow: hidden;
     transition: max-height;
-    transition-duration: ${props => props.theme.accordion.transitionDuration};
-    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transitionCubicBezier});
+    transition-duration: ${props => props.theme.accordion.transition.duration};
+    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transition.cubicBezier});
   }
 
   &.open {
-    max-height: ${props => props.theme.accordion.maxHeight};
+    max-height: ${props => props.theme.accordion.item.maxHeight};
     transition: max-height;
-    transition-duration: ${props => props.theme.accordion.transitionDuration};
-    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transitionCubicBezier});
+    transition-duration: ${props => props.theme.accordion.transition.duration};
+    transition-timing-function: cubic-bezier(${props => props.theme.accordion.transition.cubicBezier});
   }
 
   span {
