@@ -33,8 +33,11 @@ export const Link = styled.p`
   color: ${props => props.theme.header.link.color};
   text-decoration: none;
   margin-right: 30px;
+  text-align:  ${props => props.theme.header.link.textAlgin};
   font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
   cursor: pointer;
+  width: fit-content;
+  height: fit-content;
 
   &:hover {
     font-weight: bold;
@@ -49,9 +52,11 @@ export const LinkA = styled.a`
 color: ${props => props.theme.header.link.color};
   text-decoration: none;
   margin-right: 30px;
+  text-align:  ${props => props.theme.header.link.textAlgin};
   font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
   cursor: pointer;
-
+  width: fit-content;
+  height: fit-content;
 
   &:hover {
     font-weight: bold;
@@ -118,24 +123,59 @@ export const SearchIcon = styled.button`
 `;
 
 export const ButtonLink = styled(ReachRouterLink)`
-  display: block;
-  background-color: #e50914;
-  width: 84px;
-  height: fit-content;
-  color: white;
-  border: 0;
-  font-size: 15px;
-  border-radius: 3px;
-  padding: 8px 17px;
-  cursor: pointer;
-  text-decoration: none;
+display: block;
+background-color: ${props => props.theme.header.button.color};
+width: fit-content;
+height: fit-content;
+color: ${props => props.theme.header.button.textColor};
+font-size:  ${props => props.theme.header.button.fontSize};
+padding: 12px 30px;
+cursor: pointer;
+text-decoration: none;
 
-  &:hover {
-    background: #f40612;
-  }
+border-style: ${props => props.theme.header.button.border.style};
+border-color: ${props => props.theme.header.button.border.color};
+border-width: ${props => props.theme.header.button.border.width};
+border-radius: ${props => props.theme.header.button.border.radius};
+
+
+&:hover {
+  background: ${props => props.theme.header.button.hoverColor};
+}
 `;
 
-export const Picture = styled.button`
+export const ButtonLinkA = styled.a`
+display: block;
+background-color: ${props => props.theme.header.button.color};
+width: fit-content;
+height: fit-content;
+color: ${props => props.theme.header.button.textColor};
+font-size:  ${props => props.theme.header.button.fontSize};
+padding: 12px 30px;
+cursor: pointer;
+text-decoration: none;
+
+border-style: ${props => props.theme.header.button.border.style};
+border-color: ${props => props.theme.header.button.border.color};
+border-width: ${props => props.theme.header.button.border.width};
+border-radius: ${props => props.theme.header.button.border.radius};
+
+
+&:hover {
+  background: ${props => props.theme.header.button.hoverColor};
+}
+`;
+
+export const Picture = styled.img`
+  width: fit-content;
+  height: fit-content;
+  max-width:100%;
+  
+  transform: rotate(-90deg);
+
+`;
+
+export const ProfilePicture = styled.button`
   background: url(${({ src }) => src});
   background-size: contain;
   border: 0;
@@ -201,7 +241,7 @@ export const Profile = styled.div`
 `;
 
 export const Feature = styled(Container)`
-  padding: 150px 0 500px 0;
+  padding: ${props => props.theme.header.feature.padding};
   flex-direction: column;
   align-items: normal;
   align-self: ${props => props.theme.header.feature.align === "" ? "auto" : props.theme.header.feature.align};
@@ -220,6 +260,7 @@ export const FeatureCallOut = styled.h2`
   font-size: 50px;
   line-height: normal;
   font-weight: bold;
+  text-align:  ${props => props.theme.header.featureCallOut.textAlgin};
   text-shadow: ${props => props.theme.header.featureCallOut.shadow ? "2px 2px 4px rgba(0, 0, 0, 0.45)" : "none"};
   margin: 0;
 `;
@@ -228,6 +269,7 @@ export const Text = styled.p`
   color: ${props => props.theme.header.text.color === "" ? props.theme.header.textColor : props.theme.header.text.color};
   font-size: 22px;
   line-height: normal;
+  text-align:  ${props => props.theme.header.text.textAlgin};
   text-shadow: ${props => props.theme.header.text.shadow ? "2px 2px 4px rgba(0, 0, 0, 0.45)" : "none"};
 `;
 

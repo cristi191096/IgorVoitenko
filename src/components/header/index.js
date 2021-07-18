@@ -5,12 +5,14 @@ import {
   Container,
   Logo,
   ButtonLink,
+  ButtonLinkA,
   Feature,
   Text,
   FeatureCallOut,
   Link,
   LinkA,
   Picture,
+  ProfilePicture,
   Profile,
   Dropdown,
   Search,
@@ -39,9 +41,14 @@ Header.Profile = function HeaderProfile({ children, ...restProps }) {
     return <Profile {...restProps}>{children}</Profile>;
   };
 
-Header.Picture = function HeaderFeature({ src, ...restProps }) {
-    return <Picture src={`/images/users/${src}.png`} {...restProps}/>;
+Header.Picture = function HeaderPicture({ src, ...restProps }) {
+    return <Picture src={`/images/misc/${src}.jpg`} {...restProps}/>;
   };
+
+  Header.ProfilePicture = function HeaderProfilePicture({ src, ...restProps }) {
+    return <ProfilePicture src={`/images/users/${src}.png`} {...restProps}/>;
+  };
+
 
 Header.FeatureCallOut = function HeaderFeatureCallOut({
   children,
@@ -87,8 +94,8 @@ Header.Text = function HeaderText({ children, ...restProps }) {
   };
   
 
-Header.TextLink = function HeaderTextLink({ goToSection="", children, ...restProps }) {
-  return goToSection === "" ? <Link {...restProps}>{children}</Link> : <LinkA href={`#${goToSection}`} {...restProps}>{children}</LinkA>;
+Header.TextLink = function HeaderTextLink({ href="", children, ...restProps }) {
+  return href === "" ? <Link {...restProps}>{children}</Link> : <LinkA href={href} {...restProps}>{children}</LinkA>;
 };
 
 Header.Logo = function HeaderLogo({ to, ...restProps }) {
@@ -99,6 +106,6 @@ Header.Logo = function HeaderLogo({ to, ...restProps }) {
   );
 };
 
-Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
-  return <ButtonLink {...restProps}>{children}</ButtonLink>;
+Header.ButtonLink = function HeaderButtonLink({ href="", children, ...restProps }) {
+  return  href === "" ? <ButtonLink {...restProps}>{children}</ButtonLink> : <ButtonLinkA href={href} {...restProps}>{children}</ButtonLinkA>;
 };

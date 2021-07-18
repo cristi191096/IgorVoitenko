@@ -7,7 +7,6 @@ export const theme = {
       },
       item: {
         BGColor: "royalblue",
-        maxHeight: "150px",
       },
       border: {
         style: "solid",
@@ -23,20 +22,22 @@ export const theme = {
     header: {
       textColor: "black",
       link: {
-        color: "black"
+        color: "black",
+        textAlgin: "left",
       },
       feature: {
         inlineSize: "500px",
-        align: "flex-end"
+        align: "flex-end",
+        padding: "100px 0px 800px 0px"
       },
       text: {
         color: "",
-        textAlgin: "center",
+        textAlgin: "left",
         shadow: true,
       },
       featureCallOut: {
-        color: "royalblue",
-        textAlgin: "center",
+        color: "black",
+        textAlgin: "left",
         shadow: false,
       },
     },

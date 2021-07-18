@@ -7,13 +7,12 @@ export const theme = {
     },
     item: {
       BGColor: "white",
-      maxHeight: "150px",
     },
     border: {
       style: "none",
       color: "#cc0000ff",
       width: "1px 1px 1px 1px",
-      radius: "0px",
+      radius: "8px",
     },
     transition: {
       duration: "0.3s",
@@ -23,21 +22,35 @@ export const theme = {
   header: {
     textColor: "white",
     link: {
-      color: "white"
+      color: "white",
+      textAlgin: "center",
     },
     feature: {
       inlineSize: "500px",
-      align: "flex-start"
+      align: "flex-start",
+      padding: "100px 0px 700px 0px"
     },
     text: {
       color: "",
-      textAlgin: "center",
+      textAlgin: "left",
       shadow: true,
     },
     featureCallOut: {
-      color: "red",
-      textAlgin: "center",
+      color: "firebrick",
+      textAlgin: "left",
       shadow: true,
+    },
+    button: {
+      color: "firebrick",
+      textColor: "white",
+      hoverColor: "red",
+      fontSize: "15px",
+      border: {
+        style: "solid",
+        color: "#cc000000",
+        width: "1px 1px 1px 1px",
+        radius: "30px",
+      },
     },
   },
 };

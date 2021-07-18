@@ -100,27 +100,27 @@ export const Body = styled.div`
   font-weight: normal;
   line-height: normal;
   background: ${props => props.theme.accordion.item.BGColor};
-  white-space: pre-wrap;
   user-select: none;
   overflow: hidden;
+  height: auto;
+  max-height: 0px;
+
 
   border-style: ${props => props.theme.accordion.border.style};
   border-color: ${props => props.theme.accordion.border.color};
   border-width: ${props => props.theme.accordion.border.width};
   border-radius: ${props => props.theme.accordion.border.radius};
+  
 
   &.closed {  
-    max-height: 0;
     border-style: none;
-    
-    overflow: hidden;
+  
     transition: max-height;
     transition-duration: ${props => props.theme.accordion.transition.duration};
     transition-timing-function: cubic-bezier(${props => props.theme.accordion.transition.cubicBezier});
   }
 
   &.open {
-    max-height: ${props => props.theme.accordion.item.maxHeight};
     transition: max-height;
     transition-duration: ${props => props.theme.accordion.transition.duration};
     transition-timing-function: cubic-bezier(${props => props.theme.accordion.transition.cubicBezier});
@@ -128,7 +128,7 @@ export const Body = styled.div`
 
   span {
     display: block;
-    padding: 0em 2.2em 0.8em 1.2em;
+    padding: 0.8em 2.2em 0.8em 1.2em;
   }
 
   @media (max-width: 600px) {
