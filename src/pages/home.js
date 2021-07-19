@@ -1,8 +1,9 @@
 import React from "react";
-import { Header, Accordion, Section, Picture} from "../components";
+import { Header, Accordion, Section, Jumbotron} from "../components";
 import * as ROUTES from "../constants/routes";
 import faqsData from "../fixtures/faq.json"
 import accordion2 from "../fixtures/accordion2.json"
+import jumbo from "../fixtures/jumbo.json"
 import { Theme2, DefaultTheme } from "../themes";
 
 export default function Home() {
@@ -37,7 +38,8 @@ export default function Home() {
           </Header.FeatureCallOut>
           <Header.Text>
             The world around us is changing, so it's the best time to change
-            yourself. Use this time to become the best version of yourself. With
+            yourself. 
+            Use this time to become the best version of yourself. With
             intensive home workout programs in just few months you will carve
             out a Greek sculpture from your body: elite, dried muscles, shredded
             abs, round shoulders and square chest. Become the Man, you always
@@ -52,6 +54,21 @@ export default function Home() {
           <Header.Picture src="phonebefore" />
         </Header.Feature>
       </Header>
+      </Section>
+      <Section>
+      <Jumbotron.Container>
+      {jumbo.map((item) => (
+        <Jumbotron key={item.id} direction={item.direction}>
+          <Jumbotron.Pane>
+            <Jumbotron.Title>{item.title}</Jumbotron.Title>
+            <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
+          </Jumbotron.Pane>
+          <Jumbotron.Pane>
+            <Jumbotron.Image src={item.image} alt={item.alt} />
+          </Jumbotron.Pane>
+        </Jumbotron>
+      ))}
+    </Jumbotron.Container>
       </Section>
       <Accordion theme={DefaultTheme}>
         <Accordion.Title>Let's get the FAQ going!</Accordion.Title>

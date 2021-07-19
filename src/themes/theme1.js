@@ -25,10 +25,14 @@ export const theme = {
       color: "white",
       textAlgin: "center",
     },
+    navBar: {
+      margin: "0px 160px 0px 160px"
+    },
     feature: {
       inlineSize: "500px",
       align: "flex-start",
-      padding: "100px 0px 700px 0px"
+      padding: "100px 0px 500px 0px",
+      margin: "0px 160px 0px 160px"
     },
     text: {
       color: "",
@@ -53,4 +57,27 @@ export const theme = {
       },
     },
   },
+  jumbotron: {
+   item: {
+     border: {
+       style: "none",
+       color: "black",
+       width: "1px 1px 1px 1px",
+     },
+     title: {
+       color: "black",
+       size: "40px",
+       fontWeight: "700",
+       align: "left",
+       inlineSize: "400px",
+     },
+     subTitle: {
+      color: "black",
+      size: "19px",
+      fontWeight: "400",
+      align: "left",
+      inlineSize: "250px",
+     }
+   }   
+  }
 };

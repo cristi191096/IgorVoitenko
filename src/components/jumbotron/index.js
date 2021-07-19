@@ -8,6 +8,8 @@ import {
   SubTitle,
   Image,
 } from "./styles/jumbotron";
+import {ThemeProvider} from "styled-components"
+import { DefaultTheme } from "../../themes";
 
 export default function Jumbotron({
   children,
@@ -21,8 +23,11 @@ export default function Jumbotron({
   );
 }
 
-Jumbotron.Container = function JumbotronContainer({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>;
+Jumbotron.Container = function JumbotronContainer({ theme=DefaultTheme, children, ...restProps }) {
+  return (
+  <ThemeProvider theme={theme}>
+  <Container {...restProps}>{children}</Container>
+  </ThemeProvider>);
 };
 
 Jumbotron.Pane = function JumbotronPane({ children, ...restProps }) {

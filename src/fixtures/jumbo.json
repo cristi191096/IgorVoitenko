@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "title": "ABS CHALLENGE 2021",
+      "subTitle": "Focus: get abs.",
+      "image": "/images/misc/jumbo1.jpg",
+      "alt": "Tiger King on Netflix",
+      "direction": "row-reverse"
+    },
+    {
+      "id": 2,
+      "title": "BRING SALLY UP CHALLANGE",
+      "subTitle": "Focus: Chest, Shoulders, Triceps, Core",
+      "image": "/images/misc/jumbo2.jpg",
+      "alt": "Watch on mobile",
+      "direction": "row-reverse"
+    },
+    {
+      "id": 3,
+      "title": "FROM 0 TO 100",
+      "subTitle": "Focus: lose fat, build shredded muscle, get abs.",
+      "image": "/images/misc/jumbo3.jpg",
+      "alt": "Money Heist on Netflix",
+      "direction": "row-reverse"
+    },
+    {
+        "id": 4,
+        "title": "ULTIMATE SUMMER PHYSIQUE",
+        "subTitle": "Focus: lose fat, build shredded aesthetic physique, get abs.",
+        "image": "/images/misc/jumbo4.jpg",
+        "alt": "Watch on mobile",
+        "direction": "row-reverse"
+      },
+      {
+        "id": 5,
+        "title": "5 WEEKS AESTETIC BODY",
+        "subTitle": "Focus: build muscle, get stronger, increase endurance, lose fat.",
+        "image": "/images/misc/jumbo5.jpg",
+        "alt": "Watch on mobile",
+        "direction": "row-reverse"
+      },
+      {
+        "id": 6,
+        "title": "PLANK CHALLANGE TO GET ABS",
+        "subTitle": "Focus: get abs, burn fat, build muscle",
+        "image": "/images/misc/jumbo6.jpg",
+        "alt": "Watch on mobile",
+        "direction": "row-reverse"
+      }
+  ]
+  

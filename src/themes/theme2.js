@@ -25,10 +25,14 @@ export const theme = {
         color: "black",
         textAlgin: "left",
       },
+      navBar: {
+        margin: "0px 160px 0px 160px"
+      },
       feature: {
         inlineSize: "500px",
         align: "flex-end",
-        padding: "100px 0px 800px 0px"
+        padding: "100px 200px 800px 0px",
+        margin: "0px 0px 0px 0px"
       },
       text: {
         color: "",
@@ -41,5 +45,8 @@ export const theme = {
         shadow: false,
       },
     },
+    jumbotron: {
+      
+    }
   };
   
