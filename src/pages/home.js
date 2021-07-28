@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Accordion, Section, Jumbotron} from "../components";
+import { Header, Accordion, Section, Jumbotron, Footer, Grid} from "../components";
 import * as ROUTES from "../constants/routes";
 import faqsData from "../fixtures/faq.json"
 import accordion2 from "../fixtures/accordion2.json"
@@ -51,7 +51,7 @@ export default function Home() {
             time! Your first day begins now! Take a picture "BEFORE" and I'll
             see you at work!
           </Header.Text>
-          <Header.Picture src="phonebefore" />
+          <Header.Picture src="phonebefore.png" />
         </Header.Feature>
       </Header>
       </Section>
@@ -60,8 +60,10 @@ export default function Home() {
       {jumbo.map((item) => (
         <Jumbotron key={item.id} direction={item.direction}>
           <Jumbotron.Pane>
+            <Jumbotron.SubTitle>Program</Jumbotron.SubTitle>
             <Jumbotron.Title>{item.title}</Jumbotron.Title>
             <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
+
           </Jumbotron.Pane>
           <Jumbotron.Pane>
             <Jumbotron.Image src={item.image} alt={item.alt} />
@@ -70,6 +72,44 @@ export default function Home() {
       ))}
     </Jumbotron.Container>
       </Section>
+
+      <Section>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column>
+            <Header.Text>
+            The world around us is changing, so it's the best time to change
+            yourself. 
+            Use this time to become the best version of yourself. With
+            intensive home workout programs in just few months you will carve
+            out a Greek sculpture from your body: elite, dried muscles, shredded
+            abs, round shoulders and square chest. Become the Man, you always
+            wanted to be.
+          </Header.Text>
+            </Grid.Column>
+
+            <Grid.Column>
+            <Header.Text>
+            In the process of passing the programs, you will gain access to new
+            workouts, so it will be fun, hard and very rewarding at the same
+            time! Your first day begins now! Take a picture "BEFORE" and I'll
+            see you at work!
+          </Header.Text>
+            </Grid.Column>
+
+            <Grid.Column>
+            <Header.Text>
+            In the process of passing the programs, you will gain access to new
+            workouts, so it will be fun, hard and very rewarding at the same
+            time! Your first day begins now! Take a picture "BEFORE" and I'll
+            see you at work!
+          </Header.Text>
+            </Grid.Column>
+
+          </Grid.Row>
+        </Grid>
+      </Section>
+
       <Accordion theme={DefaultTheme}>
         <Accordion.Title>Let's get the FAQ going!</Accordion.Title>
       <Accordion.Frame>
@@ -81,6 +121,25 @@ export default function Home() {
         ))}
       </Accordion.Frame>
       </Accordion>
+
+      {/* <Footer>
+      <Footer.Title>Questions? Contact us.</Footer.Title>
+      <Footer.Break />
+      <Footer.Row>
+        <Footer.Column>
+        <Footer.Text>Default Paragraphs allows other modules to modify the paragraph entities by subscribing for an event called DefaultParagraphsEvents::ADDED . It is triggered right before they are set as default values of the widget. It provides the possibility to set default values to the paragraph entity's fields if needed.</Footer.Text>
+        </Footer.Column>
+
+        <Footer.Column>
+        <Footer.Text>Creating default paragraph styles is a great way of quickly being able to format and create styled text. They are especially useful if you constantly have to use the same text styles, perhaps you have to follow a predefined company style. Default paragraph styles are paragraph styles that are created by default every time a new document is created. Now that you know what they are, lets create some.</Footer.Text>
+        </Footer.Column>
+        </Footer.Row>
+
+
+      
+      <Footer.Break />
+      <Footer.Text>Netflix United Kingdom</Footer.Text>
+    </Footer> */}
     </>
   );
 }

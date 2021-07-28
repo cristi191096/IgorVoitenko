@@ -42,7 +42,7 @@ Header.Profile = function HeaderProfile({ children, ...restProps }) {
   };
 
 Header.Picture = function HeaderPicture({ src, ...restProps }) {
-    return <Picture src={`/images/misc/${src}.jpg`} {...restProps}/>;
+    return <Picture src={`/images/misc/${src}`} {...restProps}/>;
   };
 
   Header.ProfilePicture = function HeaderProfilePicture({ src, ...restProps }) {

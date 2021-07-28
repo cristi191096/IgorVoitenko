@@ -16,6 +16,8 @@ export const Inner = styled.div`
 
 export const Pane = styled.div`
   width: 50%;
+  padding:  ${props => props.theme.jumbotron.pane.padding};
+  margin:  ${props => props.theme.jumbotron.pane.margin};
 
   @media (max-width: 1000px) {
     width: 100%;

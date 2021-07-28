@@ -21,6 +21,7 @@ export const theme = {
   },
   header: {
     textColor: "white",
+    BGPosition: "center center",
     link: {
       color: "white",
       textAlgin: "center",
@@ -58,6 +59,10 @@ export const theme = {
     },
   },
   jumbotron: {
+    pane: {
+      margin: "0px 0px 0px 0px",
+      padding: "0px 80px 0px 0px"
+    },
    item: {
      border: {
        style: "none",
@@ -79,5 +84,13 @@ export const theme = {
       inlineSize: "250px",
      }
    }   
+  },
+  grid: {
+    BGColor: "darkgrey",
+    containerPadding: "90px 80px",
+    columnPadding: "0 50px",
+    columnSize: "400px",
+
+
   }
 };

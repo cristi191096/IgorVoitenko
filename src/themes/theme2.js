@@ -21,6 +21,7 @@ export const theme = {
     },
     header: {
       textColor: "black",
+      BGPosition: "center center",
       link: {
         color: "black",
         textAlgin: "left",
@@ -46,7 +47,31 @@ export const theme = {
       },
     },
     jumbotron: {
-      
+      pane: {
+        margin: "0px 0px 0px 0px",
+        padding: "0px 80px 0px 0px"
+      },
+     item: {
+       border: {
+         style: "none",
+         color: "black",
+         width: "1px 1px 1px 1px",
+       },
+       title: {
+         color: "black",
+         size: "40px",
+         fontWeight: "700",
+         align: "left",
+         inlineSize: "400px",
+       },
+       subTitle: {
+        color: "black",
+        size: "19px",
+        fontWeight: "400",
+        align: "left",
+        inlineSize: "250px",
+       }
+     } 
     }
   };
   
