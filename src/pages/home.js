@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Accordion, Section, Jumbotron, Footer, Grid} from "../components";
+import { Header, Accordion, Section, Jumbotron, Grid, Text, Button, Link} from "../components";
 import * as ROUTES from "../constants/routes";
 import faqsData from "../fixtures/faq.json"
 import accordion2 from "../fixtures/accordion2.json"
@@ -60,13 +60,15 @@ export default function Home() {
       {jumbo.map((item) => (
         <Jumbotron key={item.id} direction={item.direction}>
           <Jumbotron.Pane>
-            <Jumbotron.SubTitle>Program</Jumbotron.SubTitle>
             <Jumbotron.Title>{item.title}</Jumbotron.Title>
             <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
+            {item.button.extern ? <Button href={item.button.link}>{item.button.text}</Button> : <Button to={item.button.link}>{item.button.text}</Button>}
 
           </Jumbotron.Pane>
           <Jumbotron.Pane>
+            <Link href={item.button.link}>
             <Jumbotron.Image src={item.image} alt={item.alt} />
+            </Link>
           </Jumbotron.Pane>
         </Jumbotron>
       ))}
@@ -75,9 +77,10 @@ export default function Home() {
 
       <Section>
         <Grid>
+          <Text.Title>Never seen before!</Text.Title>
           <Grid.Row>
             <Grid.Column>
-            <Header.Text>
+            <Text>
             The world around us is changing, so it's the best time to change
             yourself. 
             Use this time to become the best version of yourself. With
@@ -85,28 +88,29 @@ export default function Home() {
             out a Greek sculpture from your body: elite, dried muscles, shredded
             abs, round shoulders and square chest. Become the Man, you always
             wanted to be.
-          </Header.Text>
+          </Text>
             </Grid.Column>
 
             <Grid.Column>
-            <Header.Text>
+            <Text>
             In the process of passing the programs, you will gain access to new
             workouts, so it will be fun, hard and very rewarding at the same
             time! Your first day begins now! Take a picture "BEFORE" and I'll
             see you at work!
-          </Header.Text>
+          </Text>
             </Grid.Column>
 
             <Grid.Column>
-            <Header.Text>
+            <Text>
             In the process of passing the programs, you will gain access to new
             workouts, so it will be fun, hard and very rewarding at the same
             time! Your first day begins now! Take a picture "BEFORE" and I'll
             see you at work!
-          </Header.Text>
+          </Text>
             </Grid.Column>
 
           </Grid.Row>
+          <Button href="#begin"><Text.Large>Let's Go!</Text.Large></Button>
         </Grid>
       </Section>
 
